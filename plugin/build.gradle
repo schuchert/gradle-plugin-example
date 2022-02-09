@@ -1,0 +1,45 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'groovy'
+}
+
+repositories {
+    mavenCentral()
+}
+
+testing {
+    suites {
+        test {
+            useSpock('2.0-groovy-3.0')
+        }
+
+        functionalTest(JvmTestSuite) {
+            useSpock('2.0-groovy-3.0')
+
+            dependencies {
+                implementation project
+            }
+
+            targets {
+                all {
+                    testTask.configure { shouldRunAfter(test) }
+                }
+            }
+        }
+    }
+}
+
+gradlePlugin {
+    plugins {
+        greeting {
+            id = 'org.shoe.greeting'
+            implementationClass = 'org.shoe.Gradle_plugin_1Plugin'
+        }
+    }
+}
+
+gradlePlugin.testSourceSets(sourceSets.functionalTest)
+
+tasks.named('check') {
+    dependsOn(testing.suites.functionalTest)
+}
