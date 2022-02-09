@@ -5,6 +5,6 @@ apply plugin: new GroovyScriptEngine(
 ).loadScriptByName('org/shoe/GitBuildVersioningPlugin.groovy')
 
 git_build_versioning {
-    message = 'Que passo'
+//    message = 'Que passo'
     greeter = 'The Great Unknowable'
 }
