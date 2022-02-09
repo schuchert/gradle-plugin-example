@@ -10,13 +10,13 @@ import spock.lang.Specification
 /**
  * A simple unit test for the 'org.shoe.greeting' plugin.
  */
-class Gradle_plugin_1PluginTest extends Specification {
+class GItBuildVersioningPluginTest extends Specification {
     def "plugin registers task"() {
         given:
         def project = ProjectBuilder.builder().build()
 
         when:
-        project.plugins.apply("org.shoe.greeting")
+        project.plugins.apply("org.shoe.git_build_versioning")
 
         then:
         project.tasks.findByName("greeting") != null

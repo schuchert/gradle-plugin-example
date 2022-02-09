@@ -2,9 +2,9 @@ apply plugin: new GroovyScriptEngine(
         [file('../plugin/src/main/groovy').absolutePath, file('../plugin/src/main/resources').absolutePath].
                 toArray(new String[2]),
         this.class.classLoader
-).loadScriptByName('org/shoe/Gradle_plugin_1Plugin.groovy')
+).loadScriptByName('org/shoe/GitBuildVersioningPlugin.groovy')
 
-greeting {
-    message = 'Hola'
+git_build_versioning {
+    message = 'Que passo'
     greeter = 'The Great Unknowable'
 }

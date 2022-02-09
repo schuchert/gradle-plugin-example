@@ -27,7 +27,12 @@ class Gradle_plugin_1PluginFunctionalTest extends Specification {
         settingsFile << ""
         buildFile << """
 plugins {
-    id('org.shoe.greeting')
+    id('org.shoe.git_build_versioning')
+}
+
+git_build_versioning {
+    message='Hello'
+    greeter='Bar' 
 }
 """
 
@@ -40,6 +45,6 @@ plugins {
         def result = runner.build()
 
         then:
-        result.output.contains("Hello from plugin 'org.shoe.greeting'")
+        result.output.contains("Hello from Bar")
     }
 }

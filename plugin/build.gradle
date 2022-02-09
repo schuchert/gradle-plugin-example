@@ -32,8 +32,8 @@ testing {
 gradlePlugin {
     plugins {
         greeting {
-            id = 'org.shoe.greeting'
-            implementationClass = 'org.shoe.Gradle_plugin_1Plugin'
+            id = 'org.shoe.git_build_versioning'
+            implementationClass = 'org.shoe.GitBuildVersioningPlugin'
         }
     }
 }
