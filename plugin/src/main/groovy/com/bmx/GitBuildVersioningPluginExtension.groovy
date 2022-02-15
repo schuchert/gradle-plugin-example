@@ -1,4 +1,4 @@
-package org.shoe
+package com.bmx
 
 
 import org.gradle.api.Project

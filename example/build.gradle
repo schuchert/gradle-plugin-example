@@ -2,7 +2,7 @@ apply plugin: new GroovyScriptEngine(
         [file('../plugin/src/main/groovy').absolutePath, file('../plugin/src/main/resources').absolutePath].
                 toArray(new String[2]),
         this.class.classLoader
-).loadScriptByName('org/shoe/GitBuildVersioningPlugin.groovy')
+).loadScriptByName('com/bmx/GitBuildVersioningPlugin.groovy')
 
 git_build_versioning {
 //    message = 'Que passo'
